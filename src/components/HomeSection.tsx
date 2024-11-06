@@ -69,7 +69,7 @@ const HomeSection = () => {
 
   <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer">
     <button className="bg-indigo-600 bg-opacity-50 text-white px-8 py-3 border-2 border-white-200 rounded-lg text-lg font-semibold hover:bg-green-700 transition-colors flex items-center gap-2">
-      <img src="whatsapp-svgrepo-com.svg" alt="WhatsApp Logo" className="w-12 h-8" />
+      <img src="https://i.ibb.co/LZ6Wmc8/whatsapp-svgrepo-com-1.png" alt="WhatsApp Logo" className="w-12 h-8" />
       WhatsApp
     </button>
   </a>
