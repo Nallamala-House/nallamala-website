@@ -45,7 +45,7 @@ const HomeSection = () => {
         className="h-screen bg-cover bg-center relative">
         <video
       className="absolute top-0 left-0 w-full h-full object-cover"
-      src="855570-hd_1920_1080_25fps.mp4"
+      src="https://github.com/TheVixhal/nallamala/blob/main/855570-hd_1920_1080_25fps.mp4"
       autoPlay
       loop
       muted
