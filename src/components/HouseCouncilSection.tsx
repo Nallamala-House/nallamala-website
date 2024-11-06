@@ -1,31 +1,55 @@
-import React from 'react';
+
 import { Building2, Mail, Phone, Linkedin } from 'lucide-react';
 
 const HouseCouncilSection = () => {
   const councilMembers = [
     {
-      name: 'Dr. Sarah Johnson',
-      role: 'House Dean',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80',
+      name: 'Naman Shyamsukha',
+      role: 'Secretary',
+      image: 'https://nmspacemuseum.org/wp-content/uploads/2019/03/Elon_Musk.jpg',
       email: 'sarah.johnson@nallamala.edu',
-      phone: '+1 (555) 123-4567',
-      linkedin: 'linkedin.com/in/sarahjohnson'
+      phone: '+91 (555) 123-4567',
+      linkedin: 'linkedin.com/in/'
     },
     {
-      name: 'Prof. Michael Chen',
-      role: 'Faculty Director',
+      name: 'Abhay',
+      role: 'Deputy Secretary',
       image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80',
       email: 'michael.chen@nallamala.edu',
-      phone: '+1 (555) 234-5678',
-      linkedin: 'linkedin.com/in/michaelchen'
+      phone: '+91 (555) 234-5678',
+      linkedin: 'linkedin.com/in/'
     },
     {
-      name: 'Emma Rodriguez',
-      role: 'Student President',
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80',
+      name: 'Keshava Krishnan',
+      role: 'Web Admin',
+      image: 'https://rilstaticasset.akamaized.net/sites/default/files/2022-09/mukesh-ambani.png',
       email: 'emma.rodriguez@nallamala.edu',
-      phone: '+1 (555) 345-6789',
-      linkedin: 'linkedin.com/in/emmarodriguez'
+      phone: '+91 (555) 345-6789',
+      linkedin: 'linkedin.com/in/'
+    },
+    {
+      name: 'Vishal Singh Baraiya',
+      role: 'WebOps',
+      image: 'https://nmspacemuseum.org/wp-content/uploads/2019/03/Elon_Musk.jpg',
+      email: 'webops@nallamala.edu',
+      phone: '+91 (555) 123-4567',
+      linkedin: 'linkedin.com/in/'
+    },
+    {
+      name: 'IDK',
+      role: 'Management Team Member',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80',
+      email: 'michael.chen@nallamala.edu',
+      phone: '+91 (555) 234-5678',
+      linkedin: 'linkedin.com/in/'
+    },
+    {
+      name: 'IDK',
+      role: 'Creative Team Member',
+      image: 'https://rilstaticasset.akamaized.net/sites/default/files/2022-09/mukesh-ambani.png',
+      email: 'emma.rodriguez@nallamala.edu',
+      phone: '+91 (555) 345-6789',
+      linkedin: 'linkedin.com/in/'
     }
   ];
 
@@ -38,7 +62,7 @@ const HouseCouncilSection = () => {
         </div>
 
         {/* Council Description */}
-        <div className="bg-white rounded-xl p-8 shadow-md mb-12">
+        <div className="bg-white rounded-xl p-8 shadow-md shadow-gray-600 mb-12">
           <p className="text-gray-600 leading-relaxed">
             The Nallamala House Council serves as the governing body of our community,
             working tirelessly to enhance student life, organize events, and maintain
@@ -52,13 +76,13 @@ const HouseCouncilSection = () => {
           {councilMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white rounded-xl overflow-hidden shadow-black shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="h-64 overflow-hidden">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover"
+                  className="w-fit h-fit object-cover"
                 />
               </div>
               <div className="p-6">

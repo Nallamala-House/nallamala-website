@@ -1,16 +1,16 @@
-import React from 'react';
+
 import { MapPin, Mail, Phone } from 'lucide-react';
 
 const RegionalLeadersSection = () => {
   const regions = [
     {
-      name: 'North Region',
+      name: 'Chandigarh Region',
       leader: {
-        name: 'Alexandra Kim',
+        name: 'Vishal Singh Baraiya',
         image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80',
         email: 'alexandra.kim@nallamala.edu',
         phone: '+1 (555) 111-2233',
-        location: 'New York City, NY'
+        location: 'Rewa, MP'
       },
       stats: {
         members: 120,
@@ -19,7 +19,7 @@ const RegionalLeadersSection = () => {
       }
     },
     {
-      name: 'South Region',
+      name: 'Kolkata Region',
       leader: {
         name: 'Marcus Thompson',
         image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80',
@@ -34,7 +34,7 @@ const RegionalLeadersSection = () => {
       }
     },
     {
-      name: 'West Region',
+      name: 'Bengluru Region',
       leader: {
         name: 'Isabella Rodriguez',
         image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80',
@@ -47,7 +47,82 @@ const RegionalLeadersSection = () => {
         events: 18,
         chapters: 6
       }
-    }
+    },
+    {
+      name: 'Mumbai REgion',
+      leader: {
+        name: 'Alexandra Kim',
+        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80',
+        email: 'alexandra.kim@nallamala.edu',
+        phone: '+1 (555) 111-2233',
+        location: 'New York City, NY'
+      },
+      stats: {
+        members: 120,
+        events: 15,
+        chapters: 5
+      }
+    },
+    {
+      name: 'Chennai Region',
+      leader: {
+        name: 'Alexandra Kim',
+        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80',
+        email: 'alexandra.kim@nallamala.edu',
+        phone: '+1 (555) 111-2233',
+        location: 'New York City, NY'
+      },
+      stats: {
+        members: 120,
+        events: 15,
+        chapters: 5
+      }
+    },
+    {
+      name: 'Delhi Region',
+      leader: {
+        name: 'Alexandra Kim',
+        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80',
+        email: 'alexandra.kim@nallamala.edu',
+        phone: '+1 (555) 111-2233',
+        location: 'New York City, NY'
+      },
+      stats: {
+        members: 120,
+        events: 15,
+        chapters: 5
+      }
+    },
+    {
+      name: 'Hyderabad Region',
+      leader: {
+        name: 'Alexandra Kim',
+        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80',
+        email: 'alexandra.kim@nallamala.edu',
+        phone: '+1 (555) 111-2233',
+        location: 'New York City, NY'
+      },
+      stats: {
+        members: 120,
+        events: 15,
+        chapters: 5
+      }
+    },
+    {
+      name: 'Patna Region',
+      leader: {
+        name: 'Alexandra Kim',
+        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80',
+        email: 'alexandra.kim@nallamala.edu',
+        phone: '+1 (555) 111-2233',
+        location: 'New York City, NY'
+      },
+      stats: {
+        members: 120,
+        events: 15,
+        chapters: 5
+      }
+    },
   ];
 
   return (
@@ -62,7 +137,7 @@ const RegionalLeadersSection = () => {
           {regions.map((region, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow"
+              className="bg-white rounded-xl overflow-hidden shadow-lg shadow-black hover:scale-[1.02] transition-transform"
             >
               {/* Region Header */}
               <div className="bg-indigo-600 p-4">

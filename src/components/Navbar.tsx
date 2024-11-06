@@ -34,12 +34,34 @@ const Navbar: React.FC<NavbarProps> = ({
     <nav
       className={`fixed top-0 left-0 h-full transition-transform duration-300 lg:translate-x-0 w-64 z-40 ${
         isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-      } ${isDark ? 'bg-gray-800' : 'bg-white shadow-xl'}`}
+      } ${isDark ? 'bg-gray-800 shadow-black shadow-xl' : 'bg-gray-300 shadow-black shadow-md'}`}
     >
       <div className="p-6">
-        <h1 className={`text-2xl font-bold text-indigo-600 mb-8`}>
+        {/* Centered Logo */}
+        <div
+          className="flex items-center justify-center mb-4"
+          style={{
+            height: '80px',
+            width: '100%',
+            marginTop: '20px'
+
+          }}
+        >
+          <img src="cropped_image.png" alt="Logo" style={{ height: '100px', width: '100px', borderRadius: '50%', boxShadow: '0px 4px 8px rgba(0, 0, 0, 1)'}} />
+        </div>
+
+        {/* Sidebar Title */}
+        <h1
+          className="text-2xl font-bold text-yellow-600 mb-8 text-center"
+          style={{
+            marginTop: '40px',
+            
+          }}
+        >
           Nallamala House
         </h1>
+
+        {/* Navigation Items */}
         <ul className="space-y-2">
           {items.map((item) => {
             const Icon = item.icon;
@@ -49,10 +71,10 @@ const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => handleNavClick(item.id)}
                   className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
                     activeSection === item.id
-                      ? 'bg-indigo-600 text-white'
+                      ? 'bg-orange-600 text-white'
                       : isDark
                       ? 'text-gray-300 hover:bg-gray-700'
-                      : 'text-gray-600 hover:bg-indigo-50'
+                      : 'text-gray-600 hover:bg-orange-50'
                   }`}
                 >
                   <Icon size={20} />

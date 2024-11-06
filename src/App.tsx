@@ -12,9 +12,9 @@ import RegionalLeadersSection from './components/RegionalLeadersSection';
 const navItems = [
   { id: 'home', label: 'Home', icon: Home },
   { id: 'events', label: 'Events', icon: Calendar },
-  { id: 'community', label: 'Community', icon: Users },
-  { id: 'council', label: 'House Council', icon: Building2 },
-  { id: 'team', label: 'Team', icon: Trophy },
+  { id: 'community', label: 'Blogs', icon: Users },
+  { id: 'council', label: 'Council & Team', icon: Building2 },
+  { id: 'team', label: 'Clubs & Societies', icon: Trophy },
   { id: 'leaders', label: 'Regional Leaders', icon: MapPin },
 ];
 

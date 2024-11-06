@@ -21,9 +21,9 @@ const upcomingEvents: Event[] = [
   },
   {
     id: 2,
-    title: "Leadership Summit",
+    title: "Online Meet-Up",
     date: "2024-04-20",
-    description: "Annual leadership conference featuring distinguished alumni and industry leaders.",
+    description: "Monthly Virtual Meet-Up for House Members",
     registrationLink: "https://forms.google.com/leadership-summit",
     image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80"
   }
@@ -32,10 +32,10 @@ const upcomingEvents: Event[] = [
 const ongoingEvents: Event[] = [
   {
     id: 3,
-    title: "Sports Tournament",
+    title: "Chess Tournament",
     date: "2024-03-15 - 2024-04-10",
-    description: "Inter-house sports competition featuring various athletic events.",
-    image: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&q=80"
+    description: "Inter-house Chess Tournament.",
+    image: "https://plus.unsplash.com/premium_photo-1672855928381-c237c6d74760?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
 ];
 
@@ -43,7 +43,7 @@ const EventsSection = () => {
   const [activeTab, setActiveTab] = useState<'upcoming' | 'ongoing'>('upcoming');
 
   const EventCard: React.FC<{ event: Event }> = ({ event }) => (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+    <div className="bg-white rounded-xl shadow-md shadow-black overflow-hidden transition-transform hover:scale-[1.02]">
       <div className="h-48 overflow-hidden">
         <img
           src={event.image}
