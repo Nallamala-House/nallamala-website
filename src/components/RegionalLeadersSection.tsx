@@ -130,7 +130,7 @@ const RegionalLeadersSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-8">
           <MapPin className="w-8 h-8 text-indigo-600 mr-3" />
-          <h2 className="text-3xl font-bold">Regional Coordinators</h2>
+          <h2 className="text-3xl font-bold">Regional Leaders</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -154,7 +154,7 @@ const RegionalLeadersSection = () => {
                   />
                   <div className="ml-4">
                     <h4 className="font-semibold">{region.leader.name}</h4>
-                    <p className="text-sm text-gray-600">Regional Coordinator</p>
+                    <p className="text-sm text-gray-600">Regional Leader</p>
                   </div>
                 </div>
 
