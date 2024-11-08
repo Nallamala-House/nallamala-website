@@ -15,7 +15,7 @@ const navItems = [
   { id: 'community', label: 'Blogs', icon: Users },
   { id: 'council', label: 'Council & Team', icon: Building2 },
   { id: 'team', label: 'Clubs & Societies', icon: Trophy },
-  { id: 'leaders', label: 'Regional Leaders', icon: MapPin },
+  { id: 'leaders', label: 'Regional Coordinators', icon: MapPin },
 ];
 
 const AppContent = () => {
