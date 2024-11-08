@@ -49,7 +49,7 @@ const RegionalLeadersSection = () => {
       }
     },
     {
-      name: 'Mumbai REgion',
+      name: 'Mumbai Region',
       leader: {
         name: 'Alexandra Kim',
         image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80',
@@ -130,7 +130,7 @@ const RegionalLeadersSection = () => {
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center mb-8">
           <MapPin className="w-8 h-8 text-indigo-600 mr-3" />
-          <h2 className="text-3xl font-bold">Regional Leaders</h2>
+          <h2 className="text-3xl font-bold">Regional Coordinators</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -154,7 +154,7 @@ const RegionalLeadersSection = () => {
                   />
                   <div className="ml-4">
                     <h4 className="font-semibold">{region.leader.name}</h4>
-                    <p className="text-sm text-gray-600">Regional Director</p>
+                    <p className="text-sm text-gray-600">Regional Coordinators</p>
                   </div>
                 </div>
 
@@ -192,7 +192,7 @@ const RegionalLeadersSection = () => {
                   </div>
                   <div className="text-center">
                     <p className="text-2xl font-bold text-indigo-600">{region.stats.chapters}</p>
-                    <p className="text-xs text-gray-600">Chapters</p>
+                    <p className="text-xs text-gray-600">Rank</p>
                   </div>
                 </div>
               </div>
