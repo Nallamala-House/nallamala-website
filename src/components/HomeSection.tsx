@@ -55,7 +55,7 @@ const HomeSection = () => {
         <div className="absolute inset-0 flex items-center justify-center text-center px-4">
           <div className="max-w-3xl">
             
-            <h1 className="text-5xl font-bold text-orange-600 mb-6 p-6 border-2 rounded-lg border-indigo-100">Nalamalla House</h1>
+            <h1 className="text-5xl font-bold text-orange-600 mb-6 p-6 border-2 rounded-lg border-indigo-100">Nallamala House</h1>
             <p className="text-xl text-indigo-100 mb-10">
             In this house, we don’t just belong. We create, we inspire, and we lead.
             </p>
