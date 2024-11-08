@@ -154,7 +154,7 @@ const RegionalLeadersSection = () => {
                   />
                   <div className="ml-4">
                     <h4 className="font-semibold">{region.leader.name}</h4>
-                    <p className="text-sm text-gray-600">Regional Coordinators</p>
+                    <p className="text-sm text-gray-600">Regional Coordinator</p>
                   </div>
                 </div>
 
