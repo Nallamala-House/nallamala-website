@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="bg-black/60 backdrop-blur-sm text-amber-100 py-12 px-4 border-t-2 border-amber-600/20">
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Logo Section */}
           <div className="flex flex-col items-center md:items-start">
             <h3 className="text-2xl font-bold text-amber-500 mb-4">Nallamala House</h3>
@@ -13,22 +13,30 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Contact Section */}
-          <div className="flex flex-col items-center">
-            <h4 className="text-lg font-semibold mb-4 text-amber-500">Contact Us</h4>
-            <a 
-              href="mailto:support@study.iitm.ac.in" 
-              className="flex items-center text-amber-200 hover:text-amber-400 transition-colors mb-2"
-            >
-              <Mail className="w-5 h-5 mr-2" />
-              support@study.iitm.ac.in
-            </a>
+          {/* Quick Links */}
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="text-lg font-semibold mb-4 text-amber-500">Quick Links</h4>
+            <ul className="space-y-2 text-amber-200 text-sm">
+              <li><a href="#home" className="hover:text-amber-400 transition-colors">Home</a></li>
+              <li><a href="#events" className="hover:text-amber-400 transition-colors">Events</a></li>
+              <li><a href="#council" className="hover:text-amber-400 transition-colors">Council & Team</a></li>
+            </ul>
+          </div>
+
+          {/* More Links */}
+          <div className="flex flex-col items-center md:items-start">
+            <h4 className="text-lg font-semibold mb-4 text-amber-500">More</h4>
+            <ul className="space-y-2 text-amber-200 text-sm">
+              <li><a href="#blogs" className="hover:text-amber-400 transition-colors">Blogs</a></li>
+              <li><a href="#clubs" className="hover:text-amber-400 transition-colors">Clubs & Societies</a></li>
+              <li><a href="#leaders" className="hover:text-amber-400 transition-colors">Regional Leaders</a></li>
+            </ul>
           </div>
 
           {/* Social Links */}
           <div className="flex flex-col items-center md:items-end">
-            <h4 className="text-lg font-semibold mb-4 text-amber-500">Follow Us</h4>
-            <div className="flex gap-4">
+            <h4 className="text-lg font-semibold mb-4 text-amber-500">Connect</h4>
+            <div className="flex gap-4 mb-4">
               <a 
                 href="https://www.linkedin.com" 
                 target="_blank" 
@@ -46,6 +54,13 @@ const Footer = () => {
                 <Youtube className="w-6 h-6" />
               </a>
             </div>
+            <a 
+              href="mailto:support@study.iitm.ac.in" 
+              className="flex items-center text-amber-200 hover:text-amber-400 transition-colors text-sm"
+            >
+              <Mail className="w-4 h-4 mr-2" />
+              Contact Us
+            </a>
           </div>
         </div>
 

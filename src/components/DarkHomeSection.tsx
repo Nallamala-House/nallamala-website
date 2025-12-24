@@ -112,36 +112,63 @@ const DarkHomeSection = () => {
             <p className="text-xl text-amber-200 mb-8 italic">
               (The World is One Family)
             </p>
-            <h1 
-              className="text-5xl md:text-7xl font-bold text-amber-500 mb-6 p-6 border-4 rounded-lg border-amber-500/50 shadow-2xl bg-black/30 backdrop-blur-sm"
-              style={{ transform: `translateY(${scrollY * 0.15}px)` }}
-            >
-              Nallamala House
-            </h1>
-            <p className="text-2xl text-amber-100 mb-10 font-medium">
+            <div className="relative mb-6 flex justify-center">
+              <h1 
+                className="text-amber-500 text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-wide"
+                style={{ 
+                  transform: `translateY(${scrollY * 0.15}px)`,
+                  textShadow: '0 0 20px rgba(212, 175, 55, 0.8), 0 0 40px rgba(212, 175, 55, 0.5)',
+                  filter: 'drop-shadow(0 0 10px rgba(212, 175, 55, 0.6))'
+                }}
+              >
+                NALLAMALA HOUSE
+              </h1>
+              <div 
+                className="absolute -inset-4 bg-gradient-to-r from-amber-500/20 via-amber-600/20 to-amber-500/20 blur-3xl -z-10"
+                style={{ animation: 'pulse 3s ease-in-out infinite' }}
+              />
+            </div>
+            <p className="text-2xl text-amber-100 mb-10 font-medium tracking-wide">
               In this house, we don't just belong. We create, we inspire, and we lead.
             </p>
-            <div className="flex justify-center items-center gap-4 mx-auto mt-8">
-              <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
-                <button className="bg-amber-500 text-black px-8 py-3 border-2 rounded-lg border-amber-400 hover:bg-amber-400 transition-all transform hover:scale-105 flex items-center gap-2 font-semibold">
-                  <img 
-                    src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a6ca814282eca7172c6_icon_clyde_white_RGB.svg" 
-                    alt="Discord" 
-                    className="w-8 h-6 invert" 
-                  />
-                  Discord
-                </button>
-              </a>
-              <a href="https://web.whatsapp.com" target="_blank" rel="noopener noreferrer">
-                <button className="bg-black text-amber-500 px-8 py-3 border-2 border-amber-500 rounded-lg hover:bg-amber-500 hover:text-black transition-all transform hover:scale-105 flex items-center gap-2 font-semibold">
-                  <img 
-                    src="/whatsapp-svgrepo-com.svg" 
-                    alt="WhatsApp" 
-                    className="w-8 h-6" 
-                  />
-                  WhatsApp
-                </button>
-              </a>
+          </div>
+        </div>
+      </div>
+
+      {/* Featured Video Section */}
+      <div className="py-20 px-4 bg-transparent">
+        <div 
+          className="max-w-6xl mx-auto"
+          style={{ 
+            opacity: scrollY > 200 ? 1 : 0,
+            transform: `translateY(${scrollY > 200 ? 0 : 50}px)`,
+            transition: 'all 0.8s ease-out'
+          }}
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-5xl font-bold mb-4 text-amber-500">Life at Nallamala House</h2>
+            <p className="text-amber-200 text-xl">Experience the spirit of our community</p>
+          </div>
+          
+          <div className="relative bg-gradient-to-br from-gray-900/60 via-black/60 to-gray-900/60 p-8 md:p-12 rounded-3xl border-2 border-amber-600/40 shadow-2xl shadow-amber-600/20 backdrop-blur-sm">
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-amber-500/30">
+              <video 
+                className="w-full h-auto max-h-[600px] object-cover"
+                autoPlay 
+                loop 
+                muted 
+                playsInline
+              >
+                <source src="/videos/sample.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            </div>
+            
+            <div className="mt-8 text-center">
+              <p className="text-amber-200/90 text-lg italic max-w-3xl mx-auto">
+                "From collaborative learning to memorable celebrations, discover what makes Nallamala House a home away from home"
+              </p>
             </div>
           </div>
         </div>

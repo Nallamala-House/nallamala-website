@@ -59,41 +59,56 @@ const MeetupGallery = () => {
   };
 
   return (
-    <div className="py-20 px-4 bg-black/40 relative overflow-hidden">
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-amber-500">Meetup Gallery</h2>
-          <p className="text-amber-200">Explore our regional meetups across India</p>
+    <div className="py-20 px-4 bg-transparent relative">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold mb-4 text-amber-500">Regional Meetup Gallery</h2>
+          <p className="text-amber-200 text-lg">Connecting Nallamala House members across India</p>
         </div>
 
-        {/* 3D Carousel */}
-        <div className="relative h-[500px] perspective-1000">
+        {/* Improved 3D Carousel */}
+        <div className="relative h-[600px] perspective-2000">
           <div className="absolute inset-0 flex items-center justify-center">
             <div 
-              className="relative w-full h-full preserve-3d transition-transform duration-1000 ease-out"
-              style={{ transform: `rotateY(${rotation}deg)` }}
+              className="relative preserve-3d transition-transform duration-700 ease-in-out"
+              style={{ 
+                transform: `rotateY(${rotation}deg)`,
+                transformStyle: 'preserve-3d'
+              }}
             >
               {monuments.map((monument, index) => {
                 const angle = (360 / monuments.length) * index;
+                const isCenter = Math.abs(((rotation % 360) + angle) % 360) < 20 || Math.abs(((rotation % 360) + angle) % 360) > 340;
+                
                 return (
                   <div
                     key={monument.id}
-                    className="absolute top-1/2 left-1/2 w-72 h-96 cursor-pointer"
+                    className="absolute cursor-pointer"
                     style={{
-                      transform: `rotateY(${angle}deg) translateZ(450px) translateX(-50%) translateY(-50%)`,
-                      transformOrigin: 'center',
+                      transform: `rotateY(${angle}deg) translateZ(550px)`,
+                      transformStyle: 'preserve-3d',
+                      left: '50%',
+                      top: '50%',
+                      marginLeft: '-180px',
+                      marginTop: '-220px',
+                      transition: 'all 0.7s ease-in-out',
+                      opacity: isCenter ? 1 : 0.6,
+                      filter: isCenter ? 'brightness(1.1)' : 'brightness(0.7)',
                     }}
                     onClick={() => window.location.href = monument.meetupLink}
                   >
-                    <div className="w-full h-full bg-gradient-to-b from-gray-800 to-black rounded-xl shadow-2xl overflow-hidden border-2 border-amber-600/50 hover:border-amber-500 hover:scale-105 transition-all hover:shadow-amber-600/50">
-                      <img
-                        src={monument.image}
-                        alt={monument.name}
-                        className="w-full h-3/4 object-cover"
-                      />
-                      <div className="p-4 text-center">
-                        <h3 className="font-bold text-lg text-amber-500">{monument.name}</h3>
-                        <p className="text-amber-200 text-sm">{monument.region}</p>
+                    <div className="w-[360px] h-[440px] bg-gradient-to-br from-gray-900 via-black to-gray-900 rounded-2xl shadow-2xl overflow-hidden border-3 border-amber-600/60 hover:border-amber-400 transition-all hover:shadow-amber-500/50">
+                      <div className="relative h-[320px] overflow-hidden">
+                        <img
+                          src={monument.image}
+                          alt={monument.name}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+                      </div>
+                      <div className="p-6 text-center bg-black/60 backdrop-blur-sm">
+                        <h3 className="font-bold text-2xl text-amber-400 mb-2">{monument.name}</h3>
+                        <p className="text-amber-200/80 text-base font-medium">{monument.region}</p>
                       </div>
                     </div>
                   </div>
@@ -104,16 +119,16 @@ const MeetupGallery = () => {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="flex justify-center gap-4 mt-8">
+        <div className="flex justify-center gap-6 mt-12">
           <button
             onClick={() => rotateCarousel('left')}
-            className="px-8 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-500 transition-all font-semibold transform hover:scale-105"
+            className="px-10 py-4 bg-gradient-to-r from-amber-600 to-amber-500 text-white rounded-xl hover:from-amber-500 hover:to-amber-400 transition-all font-bold transform hover:scale-105 shadow-lg shadow-amber-600/30"
           >
             ← Previous
           </button>
           <button
             onClick={() => rotateCarousel('right')}
-            className="px-8 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-500 transition-all font-semibold transform hover:scale-105"
+            className="px-10 py-4 bg-gradient-to-r from-amber-600 to-amber-500 text-white rounded-xl hover:from-amber-500 hover:to-amber-400 transition-all font-bold transform hover:scale-105 shadow-lg shadow-amber-600/30"
           >
             Next →
           </button>
@@ -121,8 +136,9 @@ const MeetupGallery = () => {
       </div>
 
       <style>{`
-        .perspective-1000 {
-          perspective: 1200px;
+        .perspective-2000 {
+          perspective: 2000px;
+          perspective-origin: center center;
         }
         .preserve-3d {
           transform-style: preserve-3d;

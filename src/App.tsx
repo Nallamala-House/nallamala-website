@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Home, Calendar, Users, Building2, Trophy, MapPin, Menu, X, Sun, Moon } from 'lucide-react';
+import { Home, Calendar, Users, Building2, Trophy, MapPin, Menu, X, Sun, Moon, LogIn } from 'lucide-react';
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 import DarkHomeSection from './components/DarkHomeSection';
 import DarkEventsSection from './components/DarkEventsSection';
@@ -8,6 +8,8 @@ import NewHouseCouncilSection from './components/NewHouseCouncilSection';
 import TeamSection from './components/TeamSection';
 import RegionalLeadersSection from './components/RegionalLeadersSection';
 import PixelSnow from './components/PixelSnow';
+import SignInPage from './components/SignInPage';
+import LoadingScreen from './components/LoadingScreen';
 
 const navItems = [
   { id: 'home', label: 'Home', icon: Home },
@@ -21,7 +23,17 @@ const navItems = [
 const AppContent = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showSignIn, setShowSignIn] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const { isDark, toggleTheme } = useTheme();
+
+  if (isLoading) {
+    return <LoadingScreen onLoadComplete={() => setIsLoading(false)} />;
+  }
+
+  if (showSignIn) {
+    return <SignInPage onBack={() => setShowSignIn(false)} />;
+  }
 
   const renderSection = () => {
     switch (activeSection) {
@@ -91,6 +103,13 @@ const AppContent = () => {
                     </button>
                   );
                 })}
+                <button
+                  onClick={() => setShowSignIn(true)}
+                  className="ml-2 px-5 py-2 bg-gradient-to-r from-amber-600 to-amber-500 text-white rounded-lg hover:from-amber-500 hover:to-amber-400 transition-all flex items-center gap-2 font-medium shadow-lg shadow-amber-600/30"
+                >
+                  <LogIn size={18} />
+                  Sign In
+                </button>
               </div>
 
               {/* Mobile Menu Button */}
