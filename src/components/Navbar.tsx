@@ -32,9 +32,9 @@ const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <nav
-      className={`fixed top-0 left-0 h-full transition-transform duration-300 lg:translate-x-0 w-64 z-40 ${
-        isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
-      } ${isDark ? 'bg-gray-800 shadow-black shadow-xl' : 'bg-gray-300 shadow-black shadow-md'}`}
+      className={`fixed top-0 left-0 h-full transition-transform duration-300 w-64 z-40 bg-gradient-to-b from-black/95 via-gray-900/95 to-black/95 border-r-2 border-amber-600/20 shadow-2xl shadow-amber-600/10 ${
+        isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'
+      }`}
     >
       <div className="p-6">
         {/* Centered Logo */}
@@ -47,12 +47,17 @@ const Navbar: React.FC<NavbarProps> = ({
 
           }}
         >
-          <img src="/cropped_image.png" alt="Logo" style={{ height: '100px', width: '100px', borderRadius: '50%', boxShadow: '0px 4px 8px rgba(0, 0, 0, 1)'}} />
+          <img 
+            src="/cropped_image.png" 
+            alt="Logo" 
+            className="border-4 border-amber-600 shadow-lg shadow-amber-600/30"
+            style={{ height: '100px', width: '100px', borderRadius: '50%' }}
+          />
         </div>
 
         {/* Sidebar Title */}
         <h1
-          className="text-2xl font-bold text-yellow-600 mb-8 text-center"
+          className="text-2xl font-bold text-amber-500 mb-8 text-center"
           style={{
             marginTop: '40px',
             
@@ -69,12 +74,10 @@ const Navbar: React.FC<NavbarProps> = ({
               <li key={item.id}>
                 <button
                   onClick={() => handleNavClick(item.id)}
-                  className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-colors ${
+                  className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg transition-all transform hover:scale-105 ${
                     activeSection === item.id
-                      ? 'bg-orange-600 text-white'
-                      : isDark
-                      ? 'text-gray-300 hover:bg-gray-700'
-                      : 'text-gray-600 hover:bg-orange-50'
+                      ? 'bg-amber-600 text-white font-semibold shadow-lg shadow-amber-600/30'
+                      : 'text-amber-200 hover:bg-gray-800 border-2 border-transparent hover:border-amber-600/30'
                   }`}
                 >
                   <Icon size={20} />

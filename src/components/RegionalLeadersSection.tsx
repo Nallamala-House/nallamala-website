@@ -126,22 +126,22 @@ const RegionalLeadersSection = () => {
   ];
 
   return (
-    <div className="min-h-screen p-8">
+    <div className="min-h-screen p-8 bg-black/40">
       <div className="max-w-6xl mx-auto">
-        <div className="flex items-center mb-8">
-          <MapPin className="w-8 h-8 text-indigo-600 mr-3" />
-          <h2 className="text-3xl font-bold">Regional Leaders</h2>
+        <div className="flex items-center mb-8 justify-center">
+          <MapPin className="w-8 h-8 text-amber-500 mr-3" />
+          <h2 className="text-3xl font-bold text-amber-500">Regional Leaders</h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {regions.map((region, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-lg shadow-black hover:scale-[1.02] transition-transform"
+              className="bg-gradient-to-br from-gray-800 to-black rounded-xl overflow-hidden shadow-2xl shadow-yellow-500/20 border-2 border-yellow-500/50 hover:border-yellow-500 hover:scale-[1.02] transition-all"
             >
               {/* Region Header */}
-              <div className="bg-indigo-600 p-4">
-                <h3 className="text-xl font-semibold text-white">{region.name}</h3>
+              <div className="bg-gradient-to-r from-yellow-600 to-yellow-500 p-4">
+                <h3 className="text-xl font-semibold text-black">{region.name}</h3>
               </div>
 
               {/* Leader Information */}
@@ -153,8 +153,8 @@ const RegionalLeadersSection = () => {
                     className="w-16 h-16 rounded-full object-cover"
                   />
                   <div className="ml-4">
-                    <h4 className="font-semibold">{region.leader.name}</h4>
-                    <p className="text-sm text-gray-600">Regional Leader</p>
+                    <h4 className="font-semibold text-yellow-500">{region.leader.name}</h4>
+                    <p className="text-sm text-yellow-200">Regional Leader</p>
                   </div>
                 </div>
 
@@ -162,37 +162,37 @@ const RegionalLeadersSection = () => {
                 <div className="space-y-3 mb-6">
                   <a
                     href={`mailto:${region.leader.email}`}
-                    className="flex items-center text-gray-600 hover:text-indigo-600 transition-colors"
+                    className="flex items-center text-yellow-200 hover:text-yellow-400 transition-colors"
                   >
                     <Mail className="w-4 h-4 mr-2" />
                     <span className="text-sm">{region.leader.email}</span>
                   </a>
                   <a
                     href={`tel:${region.leader.phone}`}
-                    className="flex items-center text-gray-600 hover:text-indigo-600 transition-colors"
+                    className="flex items-center text-yellow-200 hover:text-yellow-400 transition-colors"
                   >
                     <Phone className="w-4 h-4 mr-2" />
                     <span className="text-sm">{region.leader.phone}</span>
                   </a>
-                  <div className="flex items-center text-gray-600">
+                  <div className="flex items-center text-yellow-200">
                     <MapPin className="w-4 h-4 mr-2" />
                     <span className="text-sm">{region.leader.location}</span>
                   </div>
                 </div>
 
                 {/* Region Stats */}
-                <div className="grid grid-cols-3 gap-4 pt-4 border-t">
+                <div className="grid grid-cols-3 gap-4 pt-4 border-t border-yellow-500/30">
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-indigo-600">{region.stats.members}</p>
-                    <p className="text-xs text-gray-600">Members</p>
+                    <p className="text-2xl font-bold text-yellow-500">{region.stats.members}</p>
+                    <p className="text-xs text-yellow-200">Members</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-indigo-600">{region.stats.events}</p>
-                    <p className="text-xs text-gray-600">Events</p>
+                    <p className="text-2xl font-bold text-yellow-500">{region.stats.events}</p>
+                    <p className="text-xs text-yellow-200">Events</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-indigo-600">{region.stats.chapters}</p>
-                    <p className="text-xs text-gray-600">Rank</p>
+                    <p className="text-2xl font-bold text-yellow-500">{region.stats.chapters}</p>
+                    <p className="text-xs text-yellow-200">Rank</p>
                   </div>
                 </div>
               </div>

@@ -151,12 +151,12 @@ const NewHouseCouncilSection = () => {
   const currentData = councilData[selectedYear as keyof typeof councilData] || councilData['2025-2026'];
 
   return (
-    <div className="min-h-screen p-8 bg-gray-50/80 backdrop-blur-sm">
+    <div className="min-h-screen p-8 bg-black/40">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="flex items-center justify-center mb-8">
-          <Building2 className="w-10 h-10 text-indigo-600 mr-3" />
-          <h1 className="text-4xl font-bold">House Council</h1>
+          <Building2 className="w-10 h-10 text-amber-500 mr-3" />
+          <h1 className="text-4xl font-bold text-amber-500">House Council</h1>
         </div>
 
         {/* Year Tabs */}
@@ -167,8 +167,8 @@ const NewHouseCouncilSection = () => {
               onClick={() => setSelectedYear(year)}
               className={`px-6 py-3 rounded-lg font-semibold transition-all ${
                 selectedYear === year
-                  ? 'bg-indigo-600 text-white shadow-lg'
-                  : 'bg-white/90 text-gray-700 hover:bg-gray-100/90'
+                  ? 'bg-yellow-500 text-black shadow-lg shadow-yellow-500/50'
+                  : 'bg-gray-800 text-yellow-100 border-2 border-yellow-500/50 hover:border-yellow-500'
               }`}
             >
               {year}
@@ -178,10 +178,10 @@ const NewHouseCouncilSection = () => {
 
         {/* Upper House Council (UHC) */}
         <div className="mb-16">
-          <h2 className="text-3xl font-bold mb-4">Council {selectedYear}</h2>
-          <div className="bg-white/90 backdrop-blur-sm rounded-xl p-8 shadow-md mb-8">
-            <p className="text-gray-700 leading-relaxed">
-              The House Council, often referred to as the <strong>Upper House Council (UHC)</strong>, is an integral 
+          <h2 className="text-3xl font-bold mb-4 text-yellow-500">Council {selectedYear}</h2>
+          <div className="bg-gradient-to-br from-gray-800 to-black border-2 border-yellow-500/50 backdrop-blur-sm rounded-xl p-8 shadow-md mb-8">
+            <p className="text-yellow-100 leading-relaxed">
+              The House Council, often referred to as the <strong className="text-yellow-500">Upper House Council (UHC)</strong>, is an integral 
               part of our student governing body. It comprises the Secretary and Deputy Secretary of the house. The 
               Council acts as the governing body of our community, organizing events, upholding traditions, and 
               ensuring a thriving, inclusive environment for all residents. Our members are committed to fostering a 
@@ -191,27 +191,27 @@ const NewHouseCouncilSection = () => {
 
           <div className="grid md:grid-cols-2 gap-8">
             {currentData.upperHouse.map((member, index) => (
-              <div key={index} className="bg-white/90 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow">
+              <div key={index} className="bg-gradient-to-br from-gray-800 to-black border-2 border-yellow-500/50 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-2xl hover:shadow-yellow-500/30 hover:border-yellow-500 transition-all">
                 <div className="h-80 overflow-hidden">
-                  <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+                  <img src={member.image} alt={member.name} className="w-full h-full object-cover hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-1">{member.name}</h3>
-                  <p className="text-indigo-600 font-semibold mb-4">{member.designation}</p>
+                  <h3 className="text-2xl font-bold mb-1 text-yellow-500">{member.name}</h3>
+                  <p className="text-yellow-400 font-semibold mb-4">{member.designation}</p>
                   
                   <div className="space-y-3 mb-4">
-                    <a href={`mailto:${member.email}`} className="flex items-center text-gray-600 hover:text-indigo-600 transition-colors">
+                    <a href={`mailto:${member.email}`} className="flex items-center text-yellow-200 hover:text-yellow-400 transition-colors">
                       <Mail className="w-5 h-5 mr-2" />
                       <span>{member.email}</span>
                     </a>
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-600 hover:text-indigo-600 transition-colors">
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center text-yellow-200 hover:text-yellow-400 transition-colors">
                       <Linkedin className="w-5 h-5 mr-2" />
                       <span>LinkedIn Profile</span>
                     </a>
                   </div>
 
-                  <div className="mt-4 p-4 bg-indigo-50 rounded-lg">
-                    <p className="text-sm italic text-gray-700">{member.message}</p>
+                  <div className="mt-4 p-4 bg-black/30 border border-amber-500/30 rounded-lg">
+                    <p className="text-sm italic text-amber-100">{member.message}</p>
                   </div>
                 </div>
               </div>
@@ -223,8 +223,8 @@ const NewHouseCouncilSection = () => {
         {currentData.regionalCoordinators.length > 0 && (
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-4">Regional Coordinators (RCs)</h2>
-            <div className="bg-white rounded-xl p-8 shadow-md mb-8">
-              <p className="text-gray-700 leading-relaxed">
+            <div className="bg-gradient-to-br from-gray-800 to-black rounded-xl border-2 border-yellow-500/50 p-8 shadow-md mb-8">
+              <p className="text-yellow-100 leading-relaxed">
                 The Regional Coordinators, often referred to as the <strong>Lower House Council (LHC)</strong>, are an 
                 essential part of our student governing body. The Lower House Council serves as the key point of contact 
                 between house members and the governing bodies. They are the driving force behind the successful execution 
@@ -234,17 +234,17 @@ const NewHouseCouncilSection = () => {
 
             <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
               {currentData.regionalCoordinators.map((rc, index) => (
-                <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all">
+                <div key={index} className="bg-gradient-to-br from-gray-800 to-black rounded-xl border-2 border-yellow-500/50 overflow-hidden shadow-lg group hover:shadow-2xl hover:border-yellow-500 transition-all">
                   <div className="h-64 overflow-hidden relative">
                     <img src={rc.image} alt={rc.name} className="w-full h-full object-cover" />
-                    <div className="absolute inset-0 bg-indigo-600 bg-opacity-90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
-                      <p className="text-white text-sm text-center">{rc.experience}</p>
+                    <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/90 to-yellow-500/90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
+                      <p className="text-black text-sm text-center font-semibold">{rc.experience}</p>
                     </div>
                   </div>
                   <div className="p-4 text-center">
-                    <h3 className="text-lg font-bold mb-1">{rc.name}</h3>
-                    <p className="text-indigo-600 font-semibold text-sm mb-1">{rc.designation}</p>
-                    <div className="flex items-center justify-center text-gray-600 text-sm">
+                    <h3 className="text-lg font-bold mb-1 text-yellow-500">{rc.name}</h3>
+                    <p className="text-yellow-400 font-semibold text-sm mb-1">{rc.designation}</p>
+                    <div className="flex items-center justify-center text-yellow-200 text-sm">
                       <MapPin className="w-4 h-4 mr-1" />
                       <span>{rc.region}</span>
                     </div>
@@ -259,8 +259,8 @@ const NewHouseCouncilSection = () => {
         {currentData.webOps.length > 0 && (
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-4">WebOps Team</h2>
-            <div className="bg-white rounded-xl p-8 shadow-md mb-8">
-              <p className="text-gray-700 leading-relaxed">
+            <div className="bg-gradient-to-br from-gray-800 to-black rounded-xl border-2 border-yellow-500/50 p-8 shadow-md mb-8">
+              <p className="text-yellow-100 leading-relaxed">
                 The WebOps team, led by the Web Admin, comprises five dedicated members working under their supervision. 
                 The team includes a Website Manager, Video Editor, Graphic Designers, and Developers. They form the core 
                 technical team responsible for managing and maintaining all digital and technical aspects of our house, 
@@ -270,7 +270,7 @@ const NewHouseCouncilSection = () => {
 
             <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
               {currentData.webOps.map((member, index) => (
-                <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all">
+                <div key={index} className="bg-gradient-to-br from-gray-800 to-black rounded-xl border-2 border-yellow-500/50 overflow-hidden shadow-lg group hover:shadow-2xl transition-all">
                   <div className="h-64 overflow-hidden relative">
                     <img src={member.image} alt={member.name} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-purple-600 bg-opacity-90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">
@@ -294,8 +294,8 @@ const NewHouseCouncilSection = () => {
         {currentData.communityLeaders.length > 0 && (
           <div className="mb-16">
             <h2 className="text-3xl font-bold mb-4">Community Leaders</h2>
-            <div className="bg-white rounded-xl p-8 shadow-md mb-8">
-              <p className="text-gray-700 leading-relaxed">
+            <div className="bg-gradient-to-br from-gray-800 to-black rounded-xl border-2 border-yellow-500/50 p-8 shadow-md mb-8">
+              <p className="text-yellow-100 leading-relaxed">
                 These are the leaders of our official communities. They are the ones who frequently organize events 
                 within the houses to enhance engagement and foster a stronger sense of community among members.
               </p>
@@ -303,7 +303,7 @@ const NewHouseCouncilSection = () => {
 
             <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-6">
               {currentData.communityLeaders.map((leader, index) => (
-                <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg group hover:shadow-2xl transition-all">
+                <div key={index} className="bg-gradient-to-br from-gray-800 to-black rounded-xl border-2 border-yellow-500/50 overflow-hidden shadow-lg group hover:shadow-2xl transition-all">
                   <div className="h-64 overflow-hidden relative">
                     <img src={leader.image} alt={leader.name} className="w-full h-full object-cover" />
                     <div className="absolute inset-0 bg-orange-600 bg-opacity-90 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-4">

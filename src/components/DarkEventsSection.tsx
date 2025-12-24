@@ -97,7 +97,7 @@ const DarkEventsSection = () => {
 
   const EventCard: React.FC<{ event: Event; isCompleted: boolean; index: number }> = ({ event, isCompleted, index }) => (
     <div 
-      className="bg-black/60 backdrop-blur-lg border-2 border-yellow-500/30 rounded-xl shadow-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-yellow-500/20 hover:border-yellow-500"
+      className="bg-black/30 backdrop-blur-lg border-2 border-amber-500/30 rounded-xl shadow-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl hover:shadow-amber-500/20 hover:border-amber-500"
       style={{
         opacity: scrollY > 100 + index * 80 ? 1 : 0,
         transform: `translateY(${scrollY > 100 + index * 80 ? 0 : 50}px)`,
@@ -113,7 +113,7 @@ const DarkEventsSection = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
           {isCompleted && (
-            <div className="absolute top-4 right-4 bg-yellow-500 text-black px-3 py-1 rounded-full flex items-center gap-1 font-semibold">
+            <div className="absolute top-4 right-4 bg-amber-500 text-black px-3 py-1 rounded-full flex items-center gap-1 font-semibold">
               <CheckCircle className="w-4 h-4" />
               <span className="text-sm">Completed</span>
             </div>
@@ -121,26 +121,26 @@ const DarkEventsSection = () => {
         </div>
       )}
       <div className="p-6">
-        <h3 className="text-xl font-bold mb-2 text-yellow-500">{event.title}</h3>
-        <div className="flex items-center text-yellow-400 mb-3">
+        <h3 className="text-xl font-bold mb-2 text-amber-500">{event.title}</h3>
+        <div className="flex items-center text-amber-400 mb-3">
           <Calendar className="w-5 h-5 mr-2" />
           <span className="font-semibold">{event.date}</span>
         </div>
         {event.description && (
-          <p className="text-yellow-100 leading-relaxed">{event.description}</p>
+          <p className="text-amber-100 leading-relaxed">{event.description}</p>
         )}
       </div>
     </div>
   );
 
   return (
-    <div className="min-h-screen py-20 px-4 bg-gradient-to-b from-black via-gray-900 to-black">
+    <div className="min-h-screen p-8 bg-black/40">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-center mb-8">
-          <Calendar className="w-10 h-10 text-yellow-500 mr-4" />
-          <h1 className="text-5xl font-bold text-yellow-500">Events</h1>
+          <Calendar className="w-10 h-10 text-amber-500 mr-4" />
+          <h1 className="text-5xl font-bold text-amber-500">Events</h1>
         </div>
-        <p className="text-center text-yellow-200 text-xl mb-12">
+        <p className="text-center text-amber-200 text-xl mb-12">
           Discover our past achievements and upcoming activities
         </p>
 
@@ -150,8 +150,8 @@ const DarkEventsSection = () => {
             onClick={() => setActiveTab('upcoming')}
             className={`px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 ${ 
               activeTab === 'upcoming'
-                ? 'bg-yellow-500 text-black shadow-lg shadow-yellow-500/50'
-                : 'bg-black border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500/10'
+                ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/50'
+                : 'bg-black border-2 border-amber-500 text-amber-500 hover:bg-amber-500/10'
             }`}
           >
             <Clock className="inline-block mr-2" size={20} />
@@ -161,8 +161,8 @@ const DarkEventsSection = () => {
             onClick={() => setActiveTab('completed')}
             className={`px-8 py-3 rounded-lg font-semibold transition-all transform hover:scale-105 ${
               activeTab === 'completed'
-                ? 'bg-yellow-500 text-black shadow-lg shadow-yellow-500/50'
-                : 'bg-black border-2 border-yellow-500 text-yellow-500 hover:bg-yellow-500/10'
+                ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/50'
+                : 'bg-black border-2 border-amber-500 text-amber-500 hover:bg-amber-500/10'
             }`}
           >
             <CheckCircle className="inline-block mr-2" size={20} />

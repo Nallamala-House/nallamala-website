@@ -44,33 +44,33 @@ const AppContent = () => {
 
   return (
     <div className="min-h-screen relative bg-black">
-      {/* Gold PixelSnow Background */}
-      <div className="fixed inset-0 pointer-events-none z-0">
+      {/* Gold PixelSnow Background - VISIBLE */}
+      <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 1, opacity: 1 }}>
         <PixelSnow
-          color="#FFD700"
-          flakeSize={0.015}
+          color="#D4AF37"
+          flakeSize={0.012}
           minFlakeSize={1.5}
-          pixelResolution={180}
+          pixelResolution={150}
           speed={0.8}
-          depthFade={10}
-          farPlane={25}
-          brightness={0.8}
-          gamma={0.5}
-          density={0.25}
-          variant="round"
-          direction={135}
+          depthFade={5}
+          farPlane={30}
+          brightness={2.0}
+          gamma={0.7}
+          density={0.5}
+          variant="square"
+          direction={120}
         />
       </div>
 
       {/* Content Wrapper */}
-      <div className="relative z-10">
+      <div className="relative" style={{ zIndex: 10 }}>
         {/* Top Navigation */}
-        <nav className="fixed top-0 left-0 right-0 z-50 bg-black/90 backdrop-blur-md border-b border-yellow-500/30">
+        <nav className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-gray-800">
           <div className="max-w-7xl mx-auto px-4">
             <div className="flex items-center justify-between h-16">
-              <div className="flex items-center space-x-2">
-                <Building2 className="w-8 h-8 text-yellow-500" />
-                <h1 className="text-2xl font-bold text-yellow-500">Nallamala House</h1>
+              <div className="flex items-center space-x-3">
+                <img src="/nallamala_house_iit_madras_logo.jpg" alt="Nallamala House Logo" className="w-10 h-10 rounded-full object-cover" />
+                <h1 className="text-2xl font-bold text-white">Nallamala House</h1>
               </div>
               
               <div className="hidden md:flex items-center space-x-1">
@@ -82,8 +82,8 @@ const AppContent = () => {
                       onClick={() => setActiveSection(item.id)}
                       className={`px-4 py-2 rounded-lg transition-all flex items-center gap-2 ${
                         activeSection === item.id
-                          ? 'bg-yellow-500 text-black font-semibold'
-                          : 'text-yellow-500 hover:bg-yellow-500/20'
+                          ? 'bg-gray-800 text-white font-medium'
+                          : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'
                       }`}
                     >
                       <Icon size={18} />
@@ -95,7 +95,7 @@ const AppContent = () => {
 
               {/* Mobile Menu Button */}
               <button
-                className="md:hidden p-2 rounded-lg bg-yellow-500 text-black"
+                className="md:hidden p-2 rounded-lg bg-gray-800 text-white hover:bg-gray-700 transition-colors"
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               >
                 {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -104,7 +104,7 @@ const AppContent = () => {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-              <div className="md:hidden py-4 space-y-2 border-t border-yellow-500/30">
+              <div className="md:hidden py-4 space-y-2 border-t border-gray-800">
                 {navItems.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -116,8 +116,8 @@ const AppContent = () => {
                       }}
                       className={`w-full px-4 py-3 rounded-lg transition-all flex items-center gap-2 ${
                         activeSection === item.id
-                          ? 'bg-yellow-500 text-black font-semibold'
-                          : 'text-yellow-500 hover:bg-yellow-500/20'
+                          ? 'bg-gray-800 text-white font-medium'
+                          : 'text-gray-300 hover:bg-gray-800/50 hover:text-white'
                       }`}
                     >
                       <Icon size={18} />
