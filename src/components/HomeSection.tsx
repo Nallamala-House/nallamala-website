@@ -1,24 +1,10 @@
 import { useTheme } from '../context/ThemeContext';
-
-
-import {Trophy, Calendar, History, BarChart3 } from 'lucide-react';
+import { Trophy, Calendar, Users, Award, Home as HomeIcon, Target } from 'lucide-react';
 
 
 
 const HomeSection = () => {
   const { isDark } = useTheme();
-  const upcomingEvents = [
-    {
-      title: "Cultural Night 2024",
-      date: "2024-04-15",
-      image: "https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&q=80"
-    },
-    {
-      title: "Monthly Online Meet-Up",
-      date: "2024-04-20",
-      image: "https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&q=80"
-    }
-  ];
 
   const communities = [
     {
