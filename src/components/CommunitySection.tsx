@@ -34,18 +34,18 @@ const EventsSection = () => {
   const [activeTab] = useState<'upcoming' | 'ongoing'>('upcoming');
 
   const EventCard: React.FC<{ event: Event }> = ({ event }) => (
-    <div className="bg-white rounded-xl shadow-black shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+    <div className="bg-gradient-to-br from-gray-800 to-black rounded-xl shadow-2xl shadow-yellow-500/20 overflow-hidden transition-transform hover:scale-[1.02] border-2 border-yellow-500/50 hover:border-yellow-500">
       <div className="h-48 overflow-hidden">
         <img
           src={event.image}
           alt={event.title}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-        <p className="text-gray-600 mb-4">{event.description}</p>
-        <div className="flex items-center text-gray-500 mb-4">
+        <h3 className="text-xl font-semibold mb-2 text-yellow-500">{event.title}</h3>
+        <p className="text-yellow-100 mb-4">{event.description}</p>
+        <div className="flex items-center text-yellow-300 mb-4">
           <Calendar className="w-5 h-5 mr-2" />
           <span>{event.date}</span>
         </div>
@@ -54,7 +54,7 @@ const EventsSection = () => {
             href={event.registrationLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            className="inline-flex items-center px-4 py-2 bg-yellow-500 text-black rounded-lg hover:bg-yellow-400 transition-all transform hover:scale-105 font-semibold"
           >
             Read
             <ExternalLink className="w-4 h-4 ml-2" />
@@ -65,17 +65,17 @@ const EventsSection = () => {
   );
 
   return (
-    <div className="min-h-screen p-8">
-      <div className="flex items-center mb-8">
-        <Users className="w-8 h-8 text-indigo-600 mr-3" />
-        <h2 className="text-3xl font-bold">Blogs</h2>
+    <div className="min-h-screen p-8 bg-black/40">
+      <div className="flex items-center mb-8 justify-center">
+        <Users className="w-8 h-8 text-amber-500 mr-3" />
+        <h2 className="text-3xl font-bold text-amber-500">Blogs</h2>
       </div>   
         
         {/* Tabs */}
         
 
         {/* Events Grid */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {activeTab === 'upcoming'
             ? upcomingEvents.map(event => <EventCard key={event.id} event={event} />)
             : upcomingEvents.map(event => <EventCard key={event.id} event={event} />)

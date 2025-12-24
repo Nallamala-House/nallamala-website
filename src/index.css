@@ -1,3 +1,73 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #D4AF37;
+    --gold-light: #F0D492;
+    --gold-dark: #B8941E;
+  }
+}
+
+/* Override yellow with gold tones */
+.text-yellow-500 {
+  color: #D4AF37 !important;
+}
+
+.text-yellow-400 {
+  color: #E5C76B !important;
+}
+
+.text-yellow-200 {
+  color: #F0D492 !important;
+}
+
+.text-yellow-100 {
+  color: #F5E6C8 !important;
+}
+
+.bg-yellow-500 {
+  background-color: #D4AF37 !important;
+}
+
+.bg-yellow-600 {
+  background-color: #B8941E !important;
+}
+
+.border-yellow-500 {
+  border-color: #D4AF37 !important;
+}
+
+.hover\:bg-yellow-500:hover {
+  background-color: #D4AF37 !important;
+}
+
+.hover\:bg-yellow-400:hover {
+  background-color: #E5C76B !important;
+}
+
+.hover\:text-yellow-400:hover {
+  color: #E5C76B !important;
+}
+
+.hover\:text-yellow-500:hover {
+  color: #D4AF37 !important;
+}
+
+.hover\:border-yellow-500:hover {
+  border-color: #D4AF37 !important;
+}
+
+.shadow-yellow-500\/50 {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.5) !important;
+}
+
+.shadow-yellow-500\/20 {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2) !important;
+}
+
+.shadow-yellow-500\/30 {
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.3) !important;
+}
+
